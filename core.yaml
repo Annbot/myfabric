@@ -20,7 +20,7 @@ rest:
     # Enable/disable setting for the REST service. It is recommended to disable
     # REST service on validators in production deployment and use non-validating
     # nodes to host REST service
-    enabled: false
+    enabled: true
 
     # The address that the REST service will listen on for incoming requests.
     address: 0.0.0.0:7050
@@ -161,11 +161,11 @@ peer:
     #
     # All "chaincode" commands from CLI (except "query") will
     # send response from the endorser to the Committer defined below.
-    committer:
-        enabled: true
-        ledger:
-            # orderer to talk to
-            orderer: 127.0.0.1:5005
+    #committer:
+    #    enabled: false
+    #    ledger:
+    #        # orderer to talk to
+    #        orderer: 127.0.0.1:5005
 
     # TLS Settings for p2p communications
     tls:
@@ -261,7 +261,7 @@ vm:
             key:
                 file: /path/to/server-key.pem
         env:
-            enabled: false
+            enabled: true
         # Parameters of docker container creating. For docker can created by custom parameters
         # If you have your own ipam & dns-server for cluster you can use them to create container efficient.
         # NetworkMode Sets the networking mode for the container. Supported standard values are: `host`(default),`bridge`,`ipvlan`,`none`
